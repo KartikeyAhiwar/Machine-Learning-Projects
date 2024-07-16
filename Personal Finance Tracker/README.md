@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><h1 align="center">Personal Finance Tracker</h1></title>
+    <title>Personal Finance Tracker</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: #f4f4f4;
             color: #333;
         }
         .container {
-            width: 80%;
+            max-width: 900px;
             margin: auto;
-            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1, h2, h3 {
             color: #333;
@@ -37,7 +39,7 @@
             padding: 0;
         }
         ul li {
-            background: #fff;
+            background: #e8e8e8;
             margin: 5px 0;
             padding: 10px;
             border-left: 3px solid #333;
@@ -52,105 +54,72 @@
             color: #fff;
             padding: 10px;
             border-radius: 4px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #333;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-        .button:hover {background-color: #555}
-        .button:active {
-            background-color: #555;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
+            overflow-x: auto;
         }
     </style>
-    <title>Machine Learning Project</title>
 </head>
 <body>
     <div class="container">
-        <h1>Machine Learning Project</h1>
-        
-        <p align="center">
-            <img src="https://img.shields.io/badge/Machine%20Learning-Project-blue" alt="Project Badge">
-        </p>
-        
-        <p align="center">
-            <img src="https://img.shields.io/badge/Python-3.8%2B-brightgreen" alt="Python 3.8+">
-            <img src="https://img.shields.io/badge/Framework-TensorFlow-yellow" alt="TensorFlow">
-            <img src="https://img.shields.io/badge/License-MIT-orange" alt="MIT License">
-        </p>
-        
-        <p align="center">
-            A comprehensive machine learning project utilizing TensorFlow to predict outcomes based on dataset inputs.
-        </p>
-        
-        <h2>Table of Contents</h2>
+        <h1>CSV-based Finance Tracker</h1>
+
+        <h2>Project Description</h2>
+        <p>This project is a simple finance tracker that stores transaction data in a CSV file. It allows users to:</p>
         <ul>
-            <li><a href="#about-the-project">About The Project</a></li>
-            <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <li><a href="#contributing">Contributing</a></li>
-            <li><a href="#license">License</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#acknowledgments">Acknowledgments</a></li>
+            <li>Add new transactions with date, amount, category, and description.</li>
+            <li>View transactions within a specified date range.</li>
+            <li>See a summary of income, expenses, and net savings for the given period.</li>
+            <li>Plot transactions over time to visualize income and expenses.</li>
         </ul>
-        
-        <h2 id="about-the-project">About The Project</h2>
-        <p>
-            This project demonstrates the application of machine learning algorithms to predict outcomes based on dataset inputs. 
-            We use TensorFlow as the primary framework for building and training our models.
-        </p>
-        
-        <h3>Features</h3>
-        <ul>
-            <li>Data Preprocessing</li>
-            <li>Model Building</li>
-            <li>Model Training</li>
-            <li>Model Evaluation</li>
-            <li>Prediction</li>
-        </ul>
-        
-        <h2 id="getting-started">Getting Started</h2>
-        <p>
-            To get a local copy up and running follow these simple steps.
-        </p>
-        
+
+        <h2>Getting Started</h2>
+        <p>Follow the instructions below to set up and run the project.</p>
+
         <h3>Prerequisites</h3>
         <ul>
             <li>Python 3.8+</li>
-            <li>TensorFlow</li>
-            <li>NumPy</li>
             <li>Pandas</li>
+            <li>Matplotlib</li>
         </ul>
-        
+
         <h3>Installation</h3>
-        <pre><code>git clone https://github.com/your_username/machine-learning-project.git
-cd machine-learning-project
+        <pre><code>git clone https://github.com/your_username/finance-tracker.git
+cd finance-tracker
 pip install -r requirements.txt
 </code></pre>
-        
-        <h2 id="usage">Usage</h2>
-        <p>
-            Below is an example of how to run the project.
-        </p>
-        
+
+        <h2>Usage</h2>
+        <p>Run the main script to start the finance tracker:</p>
         <pre><code>python main.py</code></pre>
-        
-        <h2 id="contributing">Contributing</h2>
-        <p>
-            Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.
-        </p>
-        
+        <p>You will be prompted to add transactions or view existing ones within a date range.</p>
+
+        <h3>Example Usage</h3>
+        <p>Adding a new transaction:</p>
+        <pre><code>
+1. Enter the date of the transaction (dd-mm-yyyy) or enter for today's date: 15-07-2024
+2. Enter the amount: 100
+3. Enter the category ('I' for Income or 'E' for Expense): I
+4. Enter a description (optional): Salary
+</code></pre>
+
+        <p>Viewing transactions and summary within a date range:</p>
+        <pre><code>
+Enter the start date (dd-mm-yyyy): 01-07-2024
+Enter the end date (dd-mm-yyyy): 15-07-2024
+Transaction from 01-07-2024 to 15-07-2024
+ date      amount  category  description
+01-07-2024   50.0   Expense      Groceries
+10-07-2024  200.0    Income        Bonus
+15-07-2024  100.0    Income       Salary
+
+Summary:
+Total Income: $300.00
+Total Expense: $50.00
+Net Savings: $250.00
+</code></pre>
+
+        <h2>Contributing</h2>
+        <p>Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+
         <h3>How to Contribute</h3>
         <ul>
             <li>Fork the Project</li>
@@ -159,27 +128,19 @@ pip install -r requirements.txt
             <li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
             <li>Open a Pull Request</li>
         </ul>
-        
-        <h2 id="license">License</h2>
-        <p>
-            Distributed under the MIT License. See <a href="LICENSE.txt">LICENSE</a> for more information.
-        </p>
-        
-        <h2 id="contact">Contact</h2>
-        <p>
-            Your Name - <a href="mailto:your.email@example.com">your.email@example.com</a>
-        </p>
-        <p>
-            Project Link: <a href="https://github.com/your_username/machine-learning-project">https://github.com/your_username/machine-learning-project</a>
-        </p>
-        
-        <h2 id="acknowledgments">Acknowledgments</h2>
+
+        <h2>License</h2>
+        <p>Distributed under the MIT License. See <a href="LICENSE.txt">LICENSE</a> for more information.</p>
+
+        <h2>Contact</h2>
+        <p>Your Name - <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>Project Link: <a href="https://github.com/your_username/finance-tracker">https://github.com/your_username/finance-tracker</a></p>
+
+        <h2>Acknowledgments</h2>
         <ul>
-            <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
-            <li><a href="https://numpy.org/">NumPy</a></li>
             <li><a href="https://pandas.pydata.org/">Pandas</a></li>
+            <li><a href="https://matplotlib.org/">Matplotlib</a></li>
         </ul>
     </div>
 </body>
 </html>
-
